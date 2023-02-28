@@ -7,6 +7,7 @@ const isAuthenticated = require('../middlewares/isAuthenticated');
 
 router.post('/signup', async (req, res, next) => {
   try {
+    console.log(req.body.username)
     const username = req.body.username;
     const salt = bcrypt.genSaltSync(13);
     const passwordHash = bcrypt.hashSync(req.body.password, salt);
